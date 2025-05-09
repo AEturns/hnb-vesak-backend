@@ -1,0 +1,17 @@
+{
+    "kind": "collectionType",
+    "collectionName": "visits",
+    "info": {
+        "singularName": "visit",
+        "pluralName": "visits",
+        "displayName": "visit"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "visit": {
+            "type": "integer"
+        }
+    }
+}
