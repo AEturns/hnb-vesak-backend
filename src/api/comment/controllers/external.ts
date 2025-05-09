@@ -1,3 +1,5 @@
+import comment from "./comment";
+
 const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::comment.comment", ({ strapi }) => ({
@@ -7,7 +9,7 @@ module.exports = createCoreController("api::comment.comment", ({ strapi }) => ({
       const comment = await strapi.documents("api::comment.comment").create({
         data: {
           user: data.user,
-          text: data.text,
+          comment: data.comment,
           publishedAt: null,
         },
       });

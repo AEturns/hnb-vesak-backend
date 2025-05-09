@@ -4,19 +4,17 @@
   "info": {
     "singularName": "comment",
     "pluralName": "comments",
-    "displayName": "Comment"
+    "displayName": "comment"
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "user": {
-      "type": "text",
-      "required": true
+      "type": "string"
     },
-    "text": {
-      "type": "text",
-      "required": true
+    "comment": {
+      "type": "string"
     }
   }
 }

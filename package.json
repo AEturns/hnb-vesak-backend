@@ -1,5 +1,5 @@
 {
-  "name": "hnb-vesak-thorana-backend",
+  "name": "hnb-frontend",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -15,10 +15,10 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.12.7",
-    "@strapi/plugin-users-permissions": "5.12.7",
-    "@strapi/strapi": "5.12.7",
-    "better-sqlite3": "11.3.0",
+    "@strapi/plugin-cloud": "5.13.0",
+    "@strapi/plugin-users-permissions": "5.13.0",
+    "@strapi/strapi": "5.13.0",
+    "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -35,7 +35,7 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "9dc2eb87-db87-435e-9f5d-be907632c031",
-    "installId": "4cb71c32a08357449c543066e05e27a7fa88916294bc8b8b2e969ecd044cdf49"
+    "uuid": "2586ce0a-66ae-4012-99bb-3bed47844f35",
+    "installId": "c93f09aca25e85b50a1d45ce0097c2c17ae2e2af813a469d30e934ad9c76f717"
   }
 }
