@@ -444,12 +444,13 @@ export interface ApiReplyCommentReplyComment
 export interface ApiVisitVisit extends Struct.CollectionTypeSchema {
   collectionName: 'visits';
   info: {
+    description: '';
     displayName: 'visit';
     pluralName: 'visits';
     singularName: 'visit';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;

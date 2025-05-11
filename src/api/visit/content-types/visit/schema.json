@@ -4,10 +4,11 @@
   "info": {
     "singularName": "visit",
     "pluralName": "visits",
-    "displayName": "visit"
+    "displayName": "visit",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "visit": {
