@@ -376,6 +376,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCommentComment extends Struct.CollectionTypeSchema {
   collectionName: 'comments';
   info: {
+    description: '';
     displayName: 'comment';
     pluralName: 'comments';
     singularName: 'comment';
@@ -394,6 +395,44 @@ export interface ApiCommentComment extends Struct.CollectionTypeSchema {
       'api::comment.comment'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    reply_comments: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::reply-comment.reply-comment'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.String;
+  };
+}
+
+export interface ApiReplyCommentReplyComment
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'reply_comments';
+  info: {
+    displayName: 'Reply Comment';
+    pluralName: 'reply-comments';
+    singularName: 'reply-comment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comment: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::reply-comment.reply-comment'
+    > &
+      Schema.Attribute.Private;
+    parent_comment: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::comment.comment'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -937,6 +976,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::comment.comment': ApiCommentComment;
+      'api::reply-comment.reply-comment': ApiReplyCommentReplyComment;
       'api::visit.visit': ApiVisitVisit;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

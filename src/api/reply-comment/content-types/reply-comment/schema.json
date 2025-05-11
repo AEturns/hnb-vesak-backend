@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reply_comments",
+  "info": {
+    "singularName": "reply-comment",
+    "pluralName": "reply-comments",
+    "displayName": "Reply Comment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "parent_comment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::comment.comment",
+      "inversedBy": "reply_comments"
+    }
+  }
+}

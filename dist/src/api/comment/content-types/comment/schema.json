@@ -4,7 +4,8 @@
     "info": {
         "singularName": "comment",
         "pluralName": "comments",
-        "displayName": "comment"
+        "displayName": "comment",
+        "description": ""
     },
     "options": {
         "draftAndPublish": true
@@ -15,6 +16,12 @@
         },
         "comment": {
             "type": "string"
+        },
+        "reply_comments": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::reply-comment.reply-comment",
+            "mappedBy": "parent_comment"
         }
     }
 }
