@@ -10,5 +10,10 @@ module.exports = {
       path: "/comment/reply/draft",
       handler: "external.create_reply_draft",
     },
+    {
+      method: "POST",
+      path: "/visit",
+      handler: "external.create_visit",
+    },
   ],
 };
